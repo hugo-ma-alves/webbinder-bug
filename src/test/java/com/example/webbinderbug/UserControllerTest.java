@@ -31,7 +31,7 @@ class UserControllerTest {
                         .param("$size", "50")
                         .param("$page", "1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("OK"));
+                .andExpect(MockMvcResultMatchers.content().string("example|1|50"));
 
         ArgumentCaptor<SearchCriteria> argumentCaptor = ArgumentCaptor.forClass(SearchCriteria.class);
         Mockito.verify(userController).search(argumentCaptor.capture());
