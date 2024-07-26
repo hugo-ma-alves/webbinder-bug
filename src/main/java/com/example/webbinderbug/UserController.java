@@ -13,7 +13,7 @@ public class UserController {
     @GetMapping(value = "/", produces = APPLICATION_JSON_VALUE)
     public String search(SearchCriteria searchCriteria) {
 
-        return "OK";
+        return searchCriteria.getName() + "|" + searchCriteria.getPage() + "|" + searchCriteria.getSize();
 
     }
 }
